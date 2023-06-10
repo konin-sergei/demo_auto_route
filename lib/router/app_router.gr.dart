@@ -10,9 +10,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:demo_router/home_screen.dart' as _i2;
-import 'package:demo_router/posts_page.dart' as _i1;
-import 'package:demo_router/settings_page.dart' as _i3;
-import 'package:demo_router/single_post_page.dart' as _i4;
+import 'package:demo_router/pages/posts_page.dart' as _i1;
+import 'package:demo_router/pages/settings_page.dart' as _i3;
+import 'package:demo_router/pages/single_post_page.dart' as _i4;
 import 'package:flutter/material.dart' as _i6;
 
 abstract class $AppRouter extends _i5.RootStackRouter {

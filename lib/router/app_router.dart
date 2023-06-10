@@ -16,7 +16,7 @@ class AppRouter extends $AppRouter {
                 AutoRoute(
                     path: ':postId',
                     page: SinglePostRoute.page,
-                    title: (ctx, data) {
+                    title: (context, data) {
                       return 'Post Details ${data.pathParams.get('postId')}';
                     }),
               ],
