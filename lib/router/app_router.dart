@@ -9,6 +9,7 @@ class AppRouter extends $AppRouter {
           path: '/',
           page: HomeRoute.page,
           children: [
+            AutoRoute(path: 'settings', page: SettingsRoute.page),
             AutoRoute(
               path: 'posts',
               page: PostsRoute.page,
@@ -21,7 +22,6 @@ class AppRouter extends $AppRouter {
                     }),
               ],
             ),
-            AutoRoute(path: 'settings', page: SettingsRoute.page),
           ],
         ),
       ];

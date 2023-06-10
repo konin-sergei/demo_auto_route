@@ -19,13 +19,21 @@ class PostsPage extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            context.router.push(
-              SinglePostRoute(
-                postId: 2,
-              ),
-            );
+            context.router.push(SinglePostRoute(postId: 2));
           },
           child: Text("Post 2"),
+        ),
+        TextButton(
+          onPressed: () {
+            context.router.push(SinglePostRoute(postId: 2));
+          },
+          child: Text("Post 2"),
+        ),
+        TextButton(
+          onPressed: () {
+            context.pushRoute(SettingsRoute());
+          },
+          child: Text("Settings 1"),
         ),
       ],
     );

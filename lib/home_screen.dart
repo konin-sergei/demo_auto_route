@@ -12,19 +12,19 @@ class HomeScreen extends StatelessWidget {
       appBarBuilder: (_, tabsRouter) => AppBar(
         title: const Text('FlutterBottomNav'),
         centerTitle: true,
-        leading: const BackButton(),
+        //leading: const BackButton(),
       ),
       routes: const [
-        PostsRoute(),
         SettingsRoute(),
+        PostsRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.pages), label: 'Pots'),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+            BottomNavigationBarItem(icon: Icon(Icons.pages), label: 'Pots'),
           ],
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
