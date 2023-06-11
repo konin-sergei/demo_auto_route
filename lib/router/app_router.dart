@@ -3,26 +3,41 @@ import 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page|Screen,Route')
 class AppRouter extends $AppRouter {
+
   @override
-  List<AutoRoute> get routes => [
+  final List<AutoRoute> routes = [
+    AutoRoute(
+      page: DashboardRoute.page,
+      path: '/',
+      children: [
+        RedirectRoute(path: '', redirectTo: 'posts'),
         AutoRoute(
-          path: '/',
-          page: HomeRoute.page,
+          path: 'posts',
+          page: PostsTab.page,
+          maintainState: true,
           children: [
-            AutoRoute(path: 'settings', page: SettingsRoute.page),
             AutoRoute(
-              path: 'posts',
+              path: '',
               page: PostsRoute.page,
-              children: [
-                AutoRoute(
-                    path: ':postId',
-                    page: SinglePostRoute.page,
-                    title: (context, data) {
-                      return 'Post Details ${data.pathParams.get('postId')}';
-                    }),
-              ],
+              title: (ctx, _) => 'Posts list',
+            ),
+            AutoRoute(
+              path: ':postId',
+              page: SinglePostRoute.page,
+              title: (ctx, data) {
+                return 'Book Details ${data.pathParams.get('posid')}';
+              },
             ),
           ],
         ),
-      ];
+        AutoRoute(path: 'settings', page: SettingsRoute.page),
+      ],
+    ),
+    RedirectRoute(path: '*', redirectTo: '/'),
+  ];
+}
+
+@RoutePage(name: 'PostsTab')
+class PostsTabPage extends AutoRouter {
+  const PostsTabPage({super.key});
 }
